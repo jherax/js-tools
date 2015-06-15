@@ -1,0 +1,70 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8"/>
+  <!--[if IE]>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <![endif]-->
+  <title>#nowplaying</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="youtube + twitter"/>
+  <meta name="author" content="david rivera perez"/>
+  <meta name="layout" content="main"/>
+  
+  <link type="text/css" rel="stylesheet" href="css/bootstrap.min.css" />
+  <link type="text/css" rel="stylesheet" href="css/bootstrap-theme.min.css" />
+  <link type="text/css" rel="stylesheet" href="css/main.css" />
+
+  <!-- HTML5 shim, for IE6-9 support of HTML5 elements -->
+  <!-- http://html5shiv.googlecode.com/svn/trunk/html5.js -->
+  <!--[if lte IE 9]>
+  <script src="js/polyfills/html5shiv.min.js"></script>
+  <![endif]-->
+</head>
+
+<body>
+  <header>
+    <!-- Menu de navegacion -->
+  </header>
+
+  <section id="main-section" class="container" ng-app="nowplayingApp">
+    <!-- Vista de las páginas -->
+    <div id="page-wrapper">
+
+      <!--[if lt IE 7]>
+          <p class="browsehappy">
+            You are using an <strong>outdated</strong> browser.
+            Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+      <![endif]-->
+
+      <div ng-view class="container-fluid clearfix"></div>
+    </div>
+    
+  </section><!-- End #main-section -->
+
+  <aside>
+    <!-- Contenido tangencial, como publcidad, facebook, twitter, etc. -->
+  </aside>
+
+  <!-- Pie de página -->
+  <footer>
+    <div class="footer">
+        <strong>&copy; Nowplaying</strong> &#8776; <span>David Rivera</span> &#9737;
+        <span id="spn-hora"></span>
+    </div>
+  </footer>
+
+  <!-- SCRIPTS ADICIONALES -->
+  <script src="js/source/angular.min.js"></script>
+  <script src="js/source/angular-route.min.js"></script>
+  <script src="js/source/angular-sanitize.min.js"></script>
+  <script src="js/source/jquery-2.1.1.min.js"></script>
+  <script src="js/utils.js" charset="utf-8"></script>
+  <script src="js/mainApp.js" charset="utf-8"></script>
+  <script src="js/searchService.js" charset="utf-8"></script>
+  <script src="js/homeController.js" charset="utf-8"></script>
+
+</body>
+</html>

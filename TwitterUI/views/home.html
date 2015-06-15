@@ -1,0 +1,36 @@
+<h1>#nowplaying <small>- youtube.com</small></h1>
+<p>Finding your location: <span class="show-hide" ng-click="fnShowLocation()">{{geoStatus}}</span> <span ng-show="showLocation"> &#10162; [{{coordinates.latitude}}, {{coordinates.longitude}}] accuracy: {{coordinates.accuracy}}</span></p>
+<div class="row">
+    <div class="well profile col-md-10 col-xs-10">
+        <form class="form-inline" role="form">
+            <div class="form-group">
+                <label class="control-label text-nowrap">
+                    <span>Video URL:</span>
+                    <input type="text" class="form-control url"
+                           placeholder="http://youtube.com"
+                           autofocus="autofocus"
+                           ng-model="url"
+                           ng-keypress="onEnter($event)" />
+                </label>
+            </div>
+            <div class="form-group">
+                <label class="control-label text-nowrap">
+                    <span>Comment:</span>
+                    <input type="text" class="form-control comments"
+                           placeholder="Add your comments"
+                           ng-model="comments" />
+                </label>
+            </div>
+            <div class="form-group">
+                <input type="button" value="Tweet to #nowplaying"
+                       ng-click="fnSubmitTweet(url, comments)"
+                       ng-disabled="fnDisabled(url)"
+                       class="btn btn-primary tweet" />
+            </div>
+        </form>
+    </div>
+</div>
+<div class="row">
+    <p ng-show="!fnShowResults()">{{datasource.Message}}</p>
+    <div ng-include="'views/results.html'" ng-show="fnShowResults()"></div>
+</div>

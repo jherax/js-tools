@@ -1,0 +1,38 @@
+<div class="item-container" ng-repeat="item in $parent.datasource.items | orderBy:sort track by $index">
+    <h2 class="text-ellipsis">Imagine Dragons – Night Visions (Official Video)</h2>
+
+    <section>
+        <div class="video-wrapper">
+            <video poster="../img/bg-video.png" controls onclick="if((/Android/).test(navigator.userAgent)) this.play();">
+                <source type="video/youtube" src="{{$parent.fnGetUrl(item.text) | trustAsResourceUrl}}" />
+                El navegador no soporta HTML5 video
+            </video>
+            <!--<iframe src="https://www.youtube.com/embed/b4GQzpY3a6E" frameborder="0" allowfullscreen></iframe>-->
+        </div>
+
+        <div class="content-wrapper">
+
+            <div class="row-top clearfix">
+                <div class="pull-left">
+                    <img class="img-circle" alt="profile photo" ng-src="{{item.user.profile_image_url || '../img/bg-user.png'}}" />
+                    <div class="pull-left">
+                        <strong>{{item.user.name}}</strong>
+                        <img ng-show="!!item.user.verified" class="verified-account" alt="verified account" src="https://s3.amazonaws.com/upload.uxpin/files/36258/41610/uxpmod_1515172_12410441557_verified_account_twitter_png_by_mist_tutorials-d5gzczd.png">
+                        <p>@{{item.user.screen_name}}</p>
+                    </div>
+                </div>
+                <a href="" class="pull-right follow-button btn btn-default btn-xs">Follow</a>
+            </div>
+
+            <div class="row-middle clearfix" ng-bind-html="$parent.fnFormatText(item.text)"></div>
+
+            <div class="row-bottom clearfix">
+                <span class="time-elapsed">{{item.created_at}}</span>
+                <a href="" class="reply-button">Reply</a>
+                <a href="" class="retweet-button">Retweet</a>
+                <a href="" class="favorite-button">Favorite</a>
+            </div>
+
+        </div>
+    </section>
+</div>

@@ -1,0 +1,116 @@
+html, body, form { height: 100%; }
+body { margin: 0; font-size: 16px; font-family: Lucida Grande,Lucida Sans,Arial,sans-serif; }
+table caption { padding: 10px 5px 5px; font-size: 1.1em; font-weight: bold; letter-spacing: 1px; }
+img { border: 0 none; }
+
+label input { font-weight: normal; }
+label, input, button, select, textarea {
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif; font-size: 14px; font-weight: normal; line-height: 20px;
+}
+textarea, input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"], .uneditable-input {
+  padding: 2px 8px; background-color: #fff; border: 1px solid #ccc; -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,0.075); -moz-box-shadow: inset 0 1px 1px rgba(0,0,0,0.075); box-shadow: inset 0 1px 1px rgba(0,0,0,0.075); -webkit-transition: border linear .2s,box-shadow linear .2s; -moz-transition: border linear .2s,box-shadow linear .2s; -o-transition: border linear .2s,box-shadow linear .2s; transition: border linear .2s,box-shadow linear .2s; border-radius: 3px;
+}
+textarea:focus, input[type="text"]:focus, input[type="password"]:focus, input[type="datetime"]:focus, input[type="datetime-local"]:focus, input[type="date"]:focus, input[type="month"]:focus, input[type="time"]:focus, input[type="week"]:focus, input[type="number"]:focus, input[type="email"]:focus, input[type="url"]:focus, input[type="search"]:focus, input[type="tel"]:focus, input[type="color"]:focus, .uneditable-input:focus {
+  border-color: rgb(82,168,236); border-color: rgba(82,168,236,0.8); outline: 0; outline: thin dotted \9; -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,0.075),0 0 8px rgba(82,168,236,0.6); -moz-box-shadow: inset 0 1px 1px rgba(0,0,0,0.075),0 0 8px rgba(82,168,236,0.6); box-shadow: inset 0 1px 1px rgba(0,0,0,0.075),0 0 8px rgba(82,168,236,0.6);
+}
+textarea { resize: vertical; } /* none|horizontal|vertical|both */
+input:not([type="submit"]), textarea { box-sizing: border-box; }
+label[for] { cursor: pointer; }
+
+@media print {
+    body { font-size: 10pt; }
+}
+
+/* ==========================================================================
+   Loading animation
+   ========================================================================== */
+.bg-fixed { z-index: 2999; position: fixed; top: 0; bottom: 0; left: 0; right: 0; background-color: #000; }
+.bg-opacity { opacity: 0.36; -moz-opacity: 0.36; -khtml-opacity: 0.36; filter: alpha(opacity=36); }
+#floatingBarsG { position: relative; display: inline-block; z-index: 3000; width: 32px; height: 40px; }
+.blockG { position: absolute; background-color: #FFFFFF; width: 5px; height: 12px; -moz-border-radius: 5px 5px 0 0; -moz-transform: scale(0.4); -moz-animation-name: fadeG; -moz-animation-duration: 1.04s; -moz-animation-iteration-count: infinite; -moz-animation-direction: linear; -webkit-border-radius: 5px 5px 0 0; -webkit-transform: scale(0.4); -webkit-animation-name: fadeG; -webkit-animation-duration: 1.04s; -webkit-animation-iteration-count: infinite; -webkit-animation-direction: linear; -ms-border-radius: 5px 5px 0 0; -ms-transform: scale(0.4); -ms-animation-name: fadeG; -ms-animation-duration: 1.04s; -ms-animation-iteration-count: infinite; -ms-animation-direction: linear; -o-border-radius: 5px 5px 0 0; -o-transform: scale(0.4); -o-animation-name: fadeG; -o-animation-duration: 1.04s; -o-animation-iteration-count: infinite; -o-animation-direction: linear; border-radius: 5px 5px 0 0; transform: scale(0.4); animation-name: fadeG; animation-duration: 1.04s; animation-iteration-count: infinite; animation-direction: linear; }
+.blockG:nth-child(1) { left: 0; top: 15px; -moz-animation-delay: 0.39s; -moz-transform: rotate(-90deg); -webkit-animation-delay: 0.39s; -webkit-transform: rotate(-90deg); -ms-animation-delay: 0.39s; -ms-transform: rotate(-90deg); -o-animation-delay: 0.39s; -o-transform: rotate(-90deg); animation-delay: 0.39s; transform: rotate(-90deg); }
+.blockG:nth-child(2) { left: 4px; top: 5px; -moz-animation-delay: 0.52s; -moz-transform: rotate(-45deg); -webkit-animation-delay: 0.52s; -webkit-transform: rotate(-45deg); -ms-animation-delay: 0.52s; -ms-transform: rotate(-45deg); -o-animation-delay: 0.52s; -o-transform: rotate(-45deg); animation-delay: 0.52s; transform: rotate(-45deg); }
+.blockG:nth-child(3) { left: 13px; top: 2px; -moz-animation-delay: 0.65s; -moz-transform: rotate(0deg); -webkit-animation-delay: 0.65s; -webkit-transform: rotate(0deg); -ms-animation-delay: 0.65s; -ms-transform: rotate(0deg); -o-animation-delay: 0.65s; -o-transform: rotate(0deg); animation-delay: 0.65s; transform: rotate(0deg); }
+.blockG:nth-child(4) { right: 4px; top: 5px; -moz-animation-delay: 0.78s; -moz-transform: rotate(45deg); -webkit-animation-delay: 0.78s; -webkit-transform: rotate(45deg); -ms-animation-delay: 0.78s; -ms-transform: rotate(45deg); -o-animation-delay: 0.78s; -o-transform: rotate(45deg); animation-delay: 0.78s; transform: rotate(45deg); }
+.blockG:nth-child(5) { right: 0; top: 15px; -moz-animation-delay: 0.9099999999999999s; -moz-transform: rotate(90deg); -webkit-animation-delay: 0.9099999999999999s; -webkit-transform: rotate(90deg); -ms-animation-delay: 0.9099999999999999s; -ms-transform: rotate(90deg); -o-animation-delay: 0.9099999999999999s; -o-transform: rotate(90deg); animation-delay: 0.9099999999999999s; transform: rotate(90deg); }
+.blockG:nth-child(6) { right: 4px; bottom: 4px; -moz-animation-delay: 1.04s; -moz-transform: rotate(135deg); -webkit-animation-delay: 1.04s; -webkit-transform: rotate(135deg); -ms-animation-delay: 1.04s; -ms-transform: rotate(135deg); -o-animation-delay: 1.04s; -o-transform: rotate(135deg); animation-delay: 1.04s; transform: rotate(135deg); }
+.blockG:nth-child(7) { bottom: 0; left: 13px; -moz-animation-delay: 1.1700000000000002s; -moz-transform: rotate(180deg); -webkit-animation-delay: 1.1700000000000002s; -webkit-transform: rotate(180deg); -ms-animation-delay: 1.1700000000000002s; -ms-transform: rotate(180deg); -o-animation-delay: 1.1700000000000002s; -o-transform: rotate(180deg); animation-delay: 1.1700000000000002s; transform: rotate(180deg); }
+.blockG:nth-child(8) { left: 4px; bottom: 4px; -moz-animation-delay: 1.3s; -moz-transform: rotate(-135deg); -webkit-animation-delay: 1.3s; -webkit-transform: rotate(-135deg); -ms-animation-delay: 1.3s; -ms-transform: rotate(-135deg); -o-animation-delay: 1.3s; -o-transform: rotate(-135deg); animation-delay: 1.3s; transform: rotate(-135deg); }
+
+@-moz-keyframes fadeG {
+    0% { background-color: #000000; }
+    100% { background-color: #FFFFFF; }
+}
+@-webkit-keyframes fadeG {
+    0% { background-color: #000000; }
+    100% { background-color: #FFFFFF; }
+}
+@-ms-keyframes fadeG {
+    0% { background-color: #000000; }
+    100% { background-color: #FFFFFF; }
+}
+@-o-keyframes fadeG {
+    0% { background-color: #000000; }
+    100% { background-color: #FFFFFF; }
+}
+@keyframes fadeG {
+    0% { background-color: #000000; }
+    100% { background-color: #FFFFFF; }
+}
+
+/* ==========================================================================
+   Browse Happy prompt
+   ========================================================================== */
+.browsehappy {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0.6em;
+}
+
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+.clearfix:after { visibility: hidden; display: block; font-size: 0; content: " "; clear: both; height: 0; }
+.autoheight { overflow: auto; }
+.hide { display: none; }
+.right { text-align: right; }
+.spaced { letter-spacing: 2px; }
+.no-wrap { white-space: nowrap !important; }
+.gv-link, .gv-link > a { color: #00E; text-decoration: none; background: transparent; }
+.gv-link a:not(:only-child) { text-decoration: underline; }
+.gv-link:hover, .gv-link > a:hover { color: #FF7200; cursor: pointer; }
+.text-ellipsis { width: 210px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+/* ==========================================================================
+   Document sections
+   ========================================================================== */
+#main-section { margin: 0 auto; height: auto; min-height: 100%; overflow: auto; }
+#page-wrapper { margin: 0; padding: 30px 30px 62px 30px; /* padding-bottom must be grater than footer height */ }
+.footer { position: relative; bottom: 0; clear: both; height: 32px; margin-top: -35px; /* footer height + border */ border-top: 3px solid #E42639; line-height: 32px; text-align: center; background-color: #F2F2F2; }
+.show-hide { cursor: pointer; text-decoration: underline; }
+
+.form-group label > span { cursor: pointer; padding-left: 10px; padding-right: 5px; }
+.form-group:first-child span { padding-left: 0; }
+.form-group .tweet { margin-left: 5px; }
+.form-control { padding-left: .3em; }
+.form-control.url { width: 200px; }
+.form-control.comments { width: 300px; }
+
+.item-container { display: flex; flex-direction: column; width: 765px; height: 307px; margin-bottom: 30px; box-sizing: border-box; padding: 10px; border: solid 1px #c8c8c8; border-radius: 5px; }
+.item-container > h2 { margin: 0; width: 100%; font-size: 1.5em; font-weight: bold; }
+.item-container > section { display: flex; flex-direction: row; margin-top: 10px; }
+.video-wrapper { width: 371px; height: 251px; background-size:371px 251px; background-image:url('../img/bg-video.png'); }
+.video-wrapper > video, .video-wrapper > iframe { width: 100%; height: 100%; }
+.content-wrapper { display: flex; flex-direction: column; width: 380px; box-sizing: border-box; padding: 5px 10px 5px 15px; }
+
+.row-top { width: 100%; height: 50px; }
+.row-top .img-circle { float: left; width: 50px; height: 50px; margin-right: 8px; }
+.row-top div > .verified-account { width: 21px; height: 21px; }
+.row-top div > strong { display: inline-block; height: 21px; font-size: 0.9em; }
+.row-top div > p { height: 21px; font-size: 0.8em; color: rgb(153, 153, 153); }
+
+.row-middle { padding: 10px 0; }
+.row-bottom { color: rgb(153, 153, 153); font-size: 0.8em; }
+
+.reply-button, .retweet-button, .favorite-button { float: right; margin: 0 5px; }
