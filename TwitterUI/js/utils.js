@@ -1,4 +1,4 @@
-var utils = (function ($, undefined) {
+var utils = (function ($) {
     //===================================
     /* PRIVATE MEMBERS */
     //===================================

@@ -1,21 +1,25 @@
-(function(utils, undefined) {
-	utils.setDateTo("#spn-hora");
+utils.setDateTo("#spn-hora");
 
-	var app = angular.module("nowplayingApp", ["ngRoute", "ngSanitize"]);
+angular.module("nowplayingApp", ["ngRoute", "ngSanitize"]);
 
-	app.config(function ($routeProvider) {
+angular.module("nowplayingApp").config(
+	['$routeProvider',
+	function router ($routeProvider) {
 		$routeProvider
 			.when("/home", {
 				templateUrl: "views/home.html",
-				controller: "homeController"
+				controller: "homeController",
+				controllerAs: "homeCtrl",
+				reloadOnSearch: false
 			})
 			.otherwise({ redirectTo: "/home" });
-	});
+}]);
 
-	app.filter('trustAsResourceUrl', ['$sce', function ($sce) {
+angular.module("nowplayingApp").filter('trustAsResourceUrl',
+	['$sce',
+	function filterUrl ($sce) {
 	    return function (val) {
 	        return $sce.trustAsResourceUrl(val);
 	    };
-	}]);
-
-})(utils);
+	}
+]);

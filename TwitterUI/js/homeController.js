@@ -1,7 +1,7 @@
-(function (app) {
-
-    //Home controller
-    var homeController = function (model, window, sce, searchService) {
+angular.module("nowplayingApp").controller("homeController",
+	['$scope', '$window', '$sce', 'searchService',
+	//Home controller
+    function homeController (model, window, sce, searchService) {
 		model.url = "http://youtube.com/";
 		model.comments = "I like this video!";
 		model.datasource = { "items": [] };
@@ -56,7 +56,7 @@
 		}
 
         //Geolocation API
-		function getGeolocation() {
+		function getGeolocation () {
 		    if (window.navigator.geolocation) {
 		        window.navigator.geolocation.getCurrentPosition(onSuccess, onError);
 		    } else {
@@ -65,14 +65,14 @@
 		}
 
         //callback on error
-		function onError(msg) {
+		function onError (msg) {
 		    model.geoStatus = typeof msg == 'string' ? msg : "failed";
 		    model.coordinates = {};
 		    getTweets();
 		}
 
         //callback on success
-		function onSuccess(position) {
+		function onSuccess (position) {
 		    if (model.geoStatus == "success") return;
 		    var coords = position.coords;
 		    model.geoStatus = "success";
@@ -86,7 +86,7 @@
 		}
 
         //get the last 5 tweets with #nowplaying hashtag
-		function getTweets() {
+		function getTweets () {
 		    searchService
 				.getTweets(model.coordinates)
 				.then(function (data) {
@@ -96,13 +96,9 @@
 		}
 
         //initial actions
-        (function init() {
+        (function init () {
             getGeolocation();
 		})();
 
-	}; //end homeController
-
-    homeController.$inject = ['$scope', '$window', '$sce', 'searchService'];
-	app.controller("homeController", homeController);
-
-})(angular.module("nowplayingApp"));
+	}//end homeController
+]);
